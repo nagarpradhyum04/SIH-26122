@@ -1,7 +1,6 @@
 import re
 
 from fastapi import FastAPI
-from sentence_transformers import SentenceTransformer, util
 
 
 app = FastAPI()
@@ -10,8 +9,6 @@ app = FastAPI()
 # =========================================================
 # PRE-TRAINED AI MODEL
 # =========================================================
-
-model = SentenceTransformer("all-MiniLM-L6-v2")
 
 
 # =========================================================
