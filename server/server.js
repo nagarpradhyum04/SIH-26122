@@ -4,7 +4,8 @@ const { Pool } = require("pg");
 require("dotenv").config();
 
 const app = express();
-
+const AI_SERVICE_URL =
+  process.env.AI_SERVICE_URL || "http://127.0.0.1:8000";
 app.use(cors());
 app.use(express.json());
 
@@ -916,7 +917,7 @@ app.post("/api/process-update/:id", async (req, res) => {
 
     const aiResponse =
       await fetch(
-        "http://127.0.0.1:8000/api/process-update",
+        `${AI_SERVICE_URL}/api/process-update`,
         {
           method: "POST",
 
@@ -1298,7 +1299,7 @@ app.post("/api/clarify-update/:id", async (req, res) => {
 
     const aiResponse =
       await fetch(
-        "http://127.0.0.1:8000/api/process-update",
+        `${AI_SERVICE_URL}/api/process-update`,
         {
 
           method: "POST",
